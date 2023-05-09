@@ -1,10 +1,9 @@
-import { Button, Header } from "ui";
+import { Button } from '@bashchkov/mdui'
 
 export default function Page() {
   return (
     <>
-      <Header text="Docs" />
       <Button />
     </>
-  );
+  )
 }

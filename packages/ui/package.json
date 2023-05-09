@@ -1,19 +1,42 @@
 {
-  "name": "ui",
-  "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
-  "license": "MIT",
+  "name": "@bashchkov/mdui",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./Badge": {
+      "import": "./dist/Badge/index.js",
+      "require": "./dist/Badge/index.cjs"
+    },
+    "./Buttons": {
+      "import": "./dist/Button/index.js",
+      "require": "./dist/Button/index.cjs"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
-    "lint": "eslint \"**/*.ts*\""
+    "build": "tsc && vite build",
+    "prepare": "pnpm run build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "react": "^17.0.2",
-    "tsconfig": "workspace:*",
-    "typescript": "^4.5.2"
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.5",
+    "vite-plugin-dts": "2.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
   }
 }
